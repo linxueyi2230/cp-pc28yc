@@ -1,0 +1,41 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xmlns:context="http://www.springframework.org/schema/context"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+        <!--http://www.springframework.org/schema/beans/spring-beans-4.3.xsd-->
+        <!--http://www.springframework.org/schema/context-->
+        <!--http://www.springframework.org/schema/context/spring-context-4.3.xsd">-->
+
+    <!--&lt;!&ndash; 使用spring组件扫描@service  &ndash;&gt;-->
+    <!--<context:component-scan base-package="com.dandanyc.service"/>-->
+    <!--&lt;!&ndash; 自定义域realm &ndash;&gt;-->
+    <!--<bean id="custom_Realm" class="com.dandanyc.realm.CustomRealm"></bean>-->
+    <!--&lt;!&ndash; 安全管理器  ref对象&ndash;&gt;-->
+    <!--<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">-->
+        <!--<property name="realm" ref="custom_Realm"/>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; shiro filter &ndash;&gt;-->
+    <!--<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">-->
+        <!--&lt;!&ndash; 安全管理器必须的 &ndash;&gt;-->
+        <!--<property name="securityManager" ref="securityManager"/>-->
+        <!--&lt;!&ndash; 身份认证失败   认证提交的地址 &ndash;&gt;-->
+        <!--<property name="loginUrl" value="/index.jsp"/>-->
+        <!--&lt;!&ndash; 权限认证失败    没有权限认证提交的地址 &ndash;&gt;-->
+        <!--<property name="unauthorizedUrl" value="/unauthorized.jsp"/>-->
+        <!--&lt;!&ndash; Shiro连接约束配置,即过滤链的定义 &ndash;&gt;-->
+        <!--<property name="filterChainDefinitions">-->
+            <!--<value>-->
+                <!--&lt;!&ndash; 对静态资源设置匿名访问 &ndash;&gt;-->
+                <!--/login = anon-->
+                <!--&lt;!&ndash; /** = authc 所有url都必须认证通过才可以访问 &ndash;&gt;-->
+                <!--/admin* = authc-->
+            <!--</value>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; Shiro生命周期处理器 &ndash;&gt;-->
+    <!--<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"></bean>-->
+    <!--<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">-->
+        <!--<property name="securityManager" ref="securityManager"/>-->
+    <!--</bean>-->
+<!--</beans>-->
